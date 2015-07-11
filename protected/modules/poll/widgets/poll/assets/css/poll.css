@@ -1,0 +1,25 @@
+.poll-results {
+    margin-bottom: .5em;
+    overflow: hidden;
+
+}
+.poll-results .label {
+    font-weight: 100;
+}
+
+.poll-results .bar {
+    background-color: #D8D8D8;
+    height: 1em;
+}
+.poll-results .totals {
+  text-align: right;
+}
+.poll-results .bar .fill {
+  background-color: #2D5280;
+  height: 1em;
+} 
+.results
+{
+  display: none;  
+}
+.inner_reult

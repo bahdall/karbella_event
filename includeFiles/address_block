@@ -1,0 +1,10 @@
+<p class="small">Address</p>
+  <h3>Harrison Agency</h3>
+  <ul class="unordered-list">
+    <li>
+      285 Lexington Ave, <br>
+      New York, NY 
+    </li>
+    <li>(845)&nbsp;123-4567</li>
+    <li><a href="mailto:info@harrison.com" title="Write Email">info@harrison.com</a></li>
+  </ul>  
