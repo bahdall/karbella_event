@@ -3,8 +3,8 @@ jQuery(window).load(function($){
 
 	function eborLoadIsotope(){
 		var $container = jQuery('#container'),
-			$optionContainer = jQuery('#options'),
-			$options = $optionContainer.find('a[href^="#"]').not('a[href="#"]'),
+			$optionContainer = jQuery('#options.home'),
+			$options = $optionContainer.find('a'),
 			isOptionLinkClicked = false;
 		
 		$container.isotope({

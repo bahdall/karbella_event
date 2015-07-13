@@ -53,8 +53,6 @@ class PagesController extends Controller
 	 */
 	public function actionView($url)
 	{
-		$this->layout = "//layouts/toshnur_inner";
-        
         $model = Page::model()
 			->published()
 			->withUrl($url)
@@ -73,7 +71,6 @@ class PagesController extends Controller
     
 	public function actionDetalView($url)
 	{
-		$this->layout = "//layouts/toshnur_inner";
         
         $model = Page::model()
 			->published()
@@ -93,7 +90,6 @@ class PagesController extends Controller
     
   	public function actionSearch()
 	{
-    		$this->layout = "//layouts/toshnur_inner";
          
             if(isset($_GET['q']) && trim($_GET['q']) !="")
             {  

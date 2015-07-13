@@ -10,6 +10,14 @@
 	'count' => 3
 )) ?>
 
+
+<?php $this->widget("application.modules.events.widgets.LastEvents.LastEvents",array(
+	'count' => 8,
+	'view' => 'portfolio',
+	'pagination'=>true,
+)) ?>
+
+
 <?php $this->widget("application.modules.pages.widgets.LastNews.LastNews",array(
 	'count' => 3,
 	'section_id' => 7,

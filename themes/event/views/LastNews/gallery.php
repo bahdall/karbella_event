@@ -4,7 +4,7 @@
         <a href="<?php echo $item->getViewUrl() ?>" title="<?php echo $item->title ?>">
             <figure class="images">
                 <?php if($item->mainImage): ?>
-                    <img src="<?php echo $item->mainImage->getUrl('300x280','cropFromCenter') ?>" alt="<?php echo $item->short_description ?><span><?php echo $item->title ?></span><i>→</i>" class="slip" />
+                    <img src="<?php echo $item->mainImage->getUrl('300x280','adaptiveResize') ?>" alt="<?php echo $item->short_description ?><span><?php echo $item->title ?></span><i>→</i>" class="slip" />
                 <?php endif; ?>
             </figure>
         </a>

@@ -25,7 +25,7 @@
 /* =0. Fonts
 --------------------------------------------------------------------------------------------------------*/
 @font-face {
- font-family: 'fontello';
+ font-family: 'fontello-none';
  src: url('../fonts/fontello.eot?3837060');
  src: url('../fonts/fontello.eot?3837060#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?3837060') format('woff'), url('../fonts/fontello.ttf?3837060') format('truetype'), url('../fonts/fontello.svg?3837060#fontello') format('svg');
  font-weight: normal;
@@ -164,28 +164,11 @@ a h3 span { text-decoration:none !important }
 .additional-links > ul > li:last-child { padding: 0; }
 .social-links { padding: 10px 0; }
 .social-list > li { float: left; margin: 0 15px 0 0;  -webkit-transition: all 0.2s ease 0s; transition: all 0.2s ease 0s;}
-.social-list > li > a:before { content: ""; font-family: fontello; font-size: 14px;  -webkit-transition: all 0.2s ease 0s; transition: all 0.2s ease 0s;}
+.social-list > li > a:before { font-size: 14px;  -webkit-transition: all 0.2s ease 0s; transition: all 0.2s ease 0s;}
 #main-nav .social-list li a:before { padding:3px;}
 #main-nav .social-list li { margin-top:-3px; margin-right:9px; }
 #main-nav .social-list { margin-left:-3px; }
-.social-list > li > a.facebook:before { content: '\e800'; }
-.social-list > li > a.dribbble:before { content: '\e801'; }
-.social-list > li > a.behance:before { content: '\e802'; }
-.social-list > li > a.git:before { content: '\e803'; }
-.social-list > li > a.gplus:before { content: '\e804'; }
-.social-list > li > a.xing:before { content: '\e805'; }
-.social-list > li > a.instagram:before { content: '\e806'; }
-.social-list > li > a.twitter:before { content: '\e807'; }
-.social-list > li > a.youtube:before { content: '\e808'; }
-.social-list > li > a.slack:before { content: '\e809'; }
-.social-list > li > a.pinterest:before { content: '\e80a'; }
-.social-list > li > a.tumblr:before { content: '\e80b'; }
-.social-list > li > a.soundcloud:before { content: '\e80c'; }
-.social-list > li > a.skype:before { content: '\e80d'; }
-.social-list > li > a.linkedin:before { content: '\e80e'; }
-.social-list > li > a.vimeo:before { content: '\e80f'; }
-.social-list > li > a.flickr:before { content: '\e810'; }
-.social-list > li > a.email:before { content: '\e811'; }
+
 /* End Main Nav
 --------------------------------------------------------------------------------------------------------*/
 
@@ -210,6 +193,8 @@ a h3 span { text-decoration:none !important }
 .col3-3 { width:902px; height:auto; margin-bottom:1px; margin-right:1px; float:left; position:relative }
 .col4-3 { width:1203px; height:auto; margin-bottom:1px; margin-right:1px; position:relative }
 .col1-3 { width:300px; height:280px; margin-bottom:1px; margin-right:1px; background:#333; float:left; position:relative }
+.col1-4 { width:270px; height:280px; margin-bottom:1px; margin-right:1px; background:#333; float:left; position:relative }
+.col1-1 { width:200px; height:200px; margin-bottom:1px; margin-right:1px; background:#333; float:left; position:relative }
 .col21-3 { width:601px; height:280px; margin-bottom:1px; margin-right:1px; background:#333; float:left; position:relative }
 .col2-3 { width:601px; height:561px; margin-bottom:1px; margin-right:1px; float:left; position:relative }
 .col1-3.auto, .col2-3.auto { height:auto; }
@@ -340,6 +325,16 @@ a .bottom p { width:190px; }
 --------------------------------------------------------------------------------------------------------*/
 .images { display:block; position:relative; background:#000; }
 .images img { width:100%; display: block; max-width: 100% !important; z-index:9 }
+.images.gallery .sliphoveritem img {
+    display: block;
+    max-width: 100% !important;
+    z-index: 9;
+    margin: 0 auto;
+    width: 40px;
+}
+.images.gallery .sliphoveritemTitle > div{
+    padding-top: 52px;
+}
 .images.dark img { opacity:0.3; background:#000; }
 img { box-shadow: #000 0 0 0 }
 .videos { width:902px; height:508px; }
@@ -437,4 +432,48 @@ a.button:hover {background:#1d1d1d }
 
  .poll_form input[type=radio]{
      margin: 5px 10px 4px;
+ }
+
+
+
+ .col4-3.grey.portfolio{
+     padding: 75px 55px 74px 55px;
+ }
+
+ .portfolio-items{
+     overflow: hidden;
+ }
+
+ .portfolio-pagination{
+     padding: 49px 0 0;
+ }
+
+ .portfolio-pagination .pager{
+     margin: 0 auto;
+     width: 345px;
+ }
+ .portfolio-pagination .pager li{
+     float: left;
+     margin: 0 5px;
+     color: #fff;
+     border: 2px solid rgb(100, 99, 99);
+     padding: 8px 15px;
+     background: #454545;
+ }
+
+
+ .portfolio-pagination .pager li.selected{
+     font-weight: bold;
+     color: #fff;
+     border-color: #fff;
+ }
+
+ .portfolio-pagination .pager li.selected a{
+     font-weight: bold;
+     color: #fff;
+ }
+
+
+ .portfolio-pagination .pager li a{
+     color: #B0AEAE;
  }

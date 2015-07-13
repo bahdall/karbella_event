@@ -11,8 +11,8 @@
 <?php
 
 /**
- * View page
- * @var Page $model
+ * View Event
+ * @var Event $model
  */
 
 // Set meta tags
@@ -21,13 +21,13 @@ $this->pageKeywords    = $model->meta_keywords;
 $this->pageDescription = $model->meta_description;
 
 ?>
-<div class="element clearfix col3-3 home grey sliphover-container" style="padding: 25px 35px;" >
+<div class="element clearfix col4-3 home grey sliphover-container" style="padding: 25px 35px;" >
 	<h2><?php echo $model->title; ?></h2>
 	<p>
 		<?php echo $model->full_description; ?>
 	</p>
 
-	<?php if($model->view_image && $model->images): ?>
+	<?php if($model->images): ?>
 		<?php foreach($model->images as $image): ?>
 
 			<div class="clearfix col1-1 e-photo" >

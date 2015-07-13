@@ -24,6 +24,7 @@
 	<link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/reset.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/contact.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/styles.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/fontello.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen">
 	<!--[if gt IE 8]><!--><link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/retina-responsive.css" rel="stylesheet" type="text/css" media="screen"><!--<![endif]-->
 	<!--[if !IE]> <link href="<?php echo Yii::app()->theme->baseUrl ?>/assets/css/retina-responsive.css" rel="stylesheet" type="text/css" media="screen" /> <![endif]-->
@@ -34,7 +35,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Lora:400,400italic,600" rel="stylesheet" type="text/css">
 	<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/modernizr.js" type="text/javascript"></script>
 </head>
-<body class="aligned">
+<body class="aligned post-page">
 
 <!-- Preloader -->
 <div id="preloader">
@@ -67,18 +68,46 @@
 <div class="containing-wrapper menu">
 	<nav id="main-nav">
 		<div id="menu-close-button">×</div>
-		<ul id="options" class="option-set clearfix" data-option-key="filter">
-			<li class="selected"> <a href="#home" class="selected"><?php echo Yii::t('core','Главная') ?></a> </li>
-			<li> <a href="#portfolio"><?php echo Yii::t('core','Концерты') ?></a> </li>
-			<li> <a href="#about"><?php echo Yii::t('core','О нас') ?></a> </li>
-			<li> <a href="#pricing"><?php echo Yii::t('core','Услуги агенства') ?></a> </li>
-			<li> <a href="#gallery"><?php echo Yii::t('core','Галерея') ?></a> </li>
-			<li> <a href="#blog"><?php echo Yii::t('core','Места проведения') ?></a> </li>
-			<li> <a href="#contact"><?php echo Yii::t('core','Контакты') ?></a> </li>
+		<ul id="options" class="option-set clearfix <?php echo $this->isHome() ? 'home' : '' ?>" data-option-key="filter">
+			<li >
+				<a data-filter="home" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#home"   >
+					<?php echo Yii::t('core','Главная') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="portfolio" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#portfolio">
+					<?php echo Yii::t('core','Концерты') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="about" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#about">
+					<?php echo Yii::t('core','О нас') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="pricing" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#pricing">
+					<?php echo Yii::t('core','Услуги агенства') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="gallery" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#gallery">
+					<?php echo Yii::t('core','Галерея') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="blog" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#blog">
+					<?php echo Yii::t('core','Места проведения') ?>
+				</a>
+			</li>
+			<li>
+				<a data-filter="contact" href="<?php echo Yii::app()->createAbsoluteUrl('/store/index/index') ?>#contact">
+					<?php echo Yii::t('core','Контакты') ?>
+				</a>
+			</li>
 		</ul>
 		<div class="social-links">
 			<ul class="social-list clearfix">
-				<li> <a href="http://ppp-templates.de/hr/#" class="facebook"></a> </li>
+				<li> <a href="#" class="icon-facebook"></a> </li>
 			</ul>
 		</div>
 	</nav>
@@ -109,16 +138,24 @@
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.isotope2.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.ba-bbq.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/packery-mode.pkgd.min.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.isotope.load.js" type="text/javascript"></script>
+
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/SmoothScroll.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/main2.js" type="text/javascript"></script>
+
+<?php if($this->isHome()): ?>
+	<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/main2.js" type="text/javascript"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.isotope.load.js" type="text/javascript"></script>
+<?php else: ?>
+	<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.isotope.load.js" type="text/javascript"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/main.js" type="text/javascript"></script>
+<?php endif; ?>
+
+
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.form.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/input.fields.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/preloader.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.fancybox.pack.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.sliphover.min.js"></script>
-<script src="https://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->theme->baseUrl ?>/assets/js/jquery.gomap-1.3.2.min.js" type="text/javascript"></script>
+
 
 
 </body>
